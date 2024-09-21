@@ -8,7 +8,7 @@
 
 - 💬 Ask me about **Python, C, PHP, JavaScript, React JS, Java**
 
-- 📫 How to reach me **ghoshritaban2006@gmail.com**
+- 📫 How to reach me **ghoshritabancollege@gmail.com**
 
 - ⚡ Fun fact **I am cool headed**
 
