@@ -10,7 +10,7 @@
 
 - 🔭 I’m currently working on **Blockchain (DAPP)**
 
-- 🌱 I’m currently learning **React JS**
+- 🌱 I’m currently learning **React JS, Vite**
 
 - 💬 Ask me about **Python, C, PHP, JavaScript, React JS, Java**
 
