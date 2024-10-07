@@ -1,4 +1,4 @@
-name: Update README with Repository List
+name: Update Profile README
 
 on:
   schedule:
@@ -6,25 +6,42 @@ on:
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  update-readme:
+  update-profile:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     
-    - name: Fetch GitHub repositories and update README
+    - name: Fetch GitHub repositories and achievements
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Fetch repositories and create markdown list
+        # Fetch repositories
         curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user/repos?per_page=100 \
-        | jq -r '.[] | "* [\(.name)](\(.html_url)) - \(.description // "No description provided")"' > repos.md
+        | jq -r '.[] | "* [\(.name)](\(.html_url))"' > repos.md
 
-        # Update README.md with the repo information
+        # Fetch user data for achievements
+        USER_DATA=$(curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user)
+        
+        # Extract relevant achievements
+        PUBLIC_REPOS=$(echo $USER_DATA | jq -r .public_repos)
+        FOLLOWERS=$(echo $USER_DATA | jq -r .followers)
+        FOLLOWING=$(echo $USER_DATA | jq -r .following)
+        
+        # Create achievements section
+        cat << EOF > achievements.md
+        ## Achievements
+        - Public Repositories: $PUBLIC_REPOS
+        - Followers: $FOLLOWERS
+        - Following: $FOLLOWING
+        EOF
+
+        # Update README.md with repos and achievements
         sed -i '/<!-- REPO LIST START -->/,/<!-- REPO LIST END -->/c\<!-- REPO LIST START -->\n'"$(cat repos.md)"'\n<!-- REPO LIST END -->' README.md
+        sed -i '/<!-- ACHIEVEMENTS START -->/,/<!-- ACHIEVEMENTS END -->/c\<!-- ACHIEVEMENTS START -->\n'"$(cat achievements.md)"'\n<!-- ACHIEVEMENTS END -->' README.md
 
     - name: Commit and push if README changed
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add README.md
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repository list" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repositories and achievements" && git push)
