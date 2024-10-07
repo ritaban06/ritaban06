@@ -16,7 +16,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # Fetch repositories and create a simple list
-        curl -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=100" | \
+        curl -H "Authorization: token $GH_TOKEN" "https://api.github.com/user/repos?per_page=100" | \
         jq -r '.[] | "* [\(.name)](\(.html_url))"' > repos.md
 
         # Update README.md with the repo list
