@@ -22,5 +22,6 @@ jobs:
         run: |
           node ./get-user-profile.js
 
-      - name: Output user profile details
-        run: echo ${{ steps.get-user-profile.outputs.profile }}
+      - name: Output user profile details (excluding description)
+        run: |
+          echo ${{ steps.get-user-profile.outputs.profile }} | jq '.description = null' | jq '. | @json'
