@@ -1,60 +1,26 @@
-name: Debug GitHub API Response
+name: User Profile Details
 
 on:
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
-  debug-api:
+  show-user-profile:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Debug GitHub API response
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        echo "Fetching API response..."
-        RESPONSE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=100")
-        
-        echo "Raw API response:"
-        echo "$RESPONSE"
-        
-        echo "Checking if response is valid JSON..."
-        if echo "$RESPONSE" | jq empty; then
-          echo "Response is valid JSON"
-          echo "First item in the array:"
-          echo "$RESPONSE" | jq '.[0]'
-        else
-          echo "Response is not valid JSON"
-        fi
-        
-        echo "Attempting to create repo list..."
-        echo "$RESPONSE" | jq -r '.[] | "* \(.name) - \(.html_url)"' || echo "Failed to process with jq"
+      - name: Set up GitHub Actions environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
 
-    - name: Create simple repo list without jq
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=100" | \
-        grep -Eo '"name":"[^"]*","html_url":"[^"]*"' | \
-        sed 's/"name":"\([^"]*\)","html_url":"\([^"]*\)"/\* [\1](\2)/' > repos.md
-        
-        echo "Content of repos.md:"
-        cat repos.md
+      - name: Install dependencies
+        run: npm install axios
 
-    - name: Update README if repos.md was created
-      run: |
-        if [ -s repos.md ]; then
-          sed -i '/<!-- REPO LIST START -->/,/<!-- REPO LIST END -->/c\<!-- REPO LIST START -->\n'"$(cat repos.md)"'\n<!-- REPO LIST END -->' README.md
-          echo "README updated with repo list"
-        else
-          echo "repos.md is empty or wasn't created. README not updated."
-        fi
-
-    - name: Commit and push if README changed
-      run: |
-        git config --global user.name 'GitHub Action'
-        git config --global user.email 'action@github.com'
-        git add README.md
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repository list" && git push)
+      - name: Get user profile
+        run: |
+          node ./get-user-profile.js
+          
+      - name: Output user profile details
+        run: echo ${{ steps.get-user-profile.outputs.profile }}
