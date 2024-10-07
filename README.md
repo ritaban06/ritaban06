@@ -17,6 +17,6 @@
 
 ## 🌟 Repositories
 <!-- REPO LIST START -->
-*This section will be dynamically updated with repository info.*
+
 <!-- REPO LIST END -->
 
