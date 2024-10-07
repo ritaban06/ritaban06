@@ -1,26 +1,56 @@
-name: Update README with Repository List
+name: Debug GitHub API Response
 
 on:
-  schedule:
-    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  update-readme:
+  debug-api:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Fetch GitHub repositories
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Debug GitHub API response
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        echo "Fetching API response..."
+        RESPONSE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=100")
+        
+        echo "Raw API response:"
+        echo "$RESPONSE"
+        
+        echo "Checking if response is valid JSON..."
+        if echo "$RESPONSE" | jq empty; then
+          echo "Response is valid JSON"
+          echo "First item in the array:"
+          echo "$RESPONSE" | jq '.[0]'
+        else
+          echo "Response is not valid JSON"
+        fi
+        
+        echo "Attempting to create repo list..."
+        echo "$RESPONSE" | jq -r '.[] | "* \(.name) - \(.html_url)"' || echo "Failed to process with jq"
+
+    - name: Create simple repo list without jq
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Fetch repositories and create a simple list
-        curl -H "Authorization: token $GH_TOKEN" "https://api.github.com/user/repos?per_page=100" | \
-        jq -r '.[] | "* [\(.name)](\(.html_url))"' > repos.md
+        curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=100" | \
+        grep -Eo '"name":"[^"]*","html_url":"[^"]*"' | \
+        sed 's/"name":"\([^"]*\)","html_url":"\([^"]*\)"/\* [\1](\2)/' > repos.md
+        
+        echo "Content of repos.md:"
+        cat repos.md
 
-        # Update README.md with the repo list
-        sed -i '/<!-- REPO LIST START -->/,/<!-- REPO LIST END -->/c\<!-- REPO LIST START -->\n'"$(cat repos.md)"'\n<!-- REPO LIST END -->' README.md
+    - name: Update README if repos.md was created
+      run: |
+        if [ -s repos.md ]; then
+          sed -i '/<!-- REPO LIST START -->/,/<!-- REPO LIST END -->/c\<!-- REPO LIST START -->\n'"$(cat repos.md)"'\n<!-- REPO LIST END -->' README.md
+          echo "README updated with repo list"
+        else
+          echo "repos.md is empty or wasn't created. README not updated."
+        fi
 
     - name: Commit and push if README changed
       run: |
