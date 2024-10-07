@@ -17,6 +17,6 @@
 
 ## 🌟 Repositories
 <!-- REPO LIST START -->
-*This section will be dynamically updated with repository info.*
+curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos
 <!-- REPO LIST END -->
 
