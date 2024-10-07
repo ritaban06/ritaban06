@@ -1,65 +1,30 @@
-name: Fetch GitHub User Profile
+name: Update README with Repository List
 
 on:
-  workflow_dispatch:
-    inputs:
-      username:
-        description: 'GitHub username to fetch details for'
-        required: true
-        default: 'octocat'
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  fetch-user-profile:
+  update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    
+    - name: Fetch GitHub repositories and update README
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Fetch repositories and create markdown list
+        curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user/repos?per_page=100 \
+        | jq -r '.[] | "* [\(.name)](\(.html_url)) - \(.description // "No description provided")"' > repos.md
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+        # Update README.md with the repo information
+        sed -i '/<!-- REPO LIST START -->/,/<!-- REPO LIST END -->/c\<!-- REPO LIST START -->\n'"$(cat repos.md)"'\n<!-- REPO LIST END -->' README.md
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
-
-      - name: Fetch user profile
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          python - <<EOF
-          import requests
-          import json
-          import os
-
-          username = '${{ github.event.inputs.username }}'
-          token = os.environ['GITHUB_TOKEN']
-
-          headers = {
-              'Authorization': f'token {token}',
-              'Accept': 'application/vnd.github.v3+json'
-          }
-
-          response = requests.get(f'https://api.github.com/users/{username}', headers=headers)
-          user_data = response.json()
-
-          print("User Profile Details:")
-          print(json.dumps(user_data, indent=2))
-
-          # Fetch additional details like repositories, organizations, etc.
-          print("\nRepositories:")
-          repos_response = requests.get(f'https://api.github.com/users/{username}/repos', headers=headers)
-          repos_data = repos_response.json()
-          print(json.dumps(repos_data, indent=2))
-
-          print("\nOrganizations:")
-          orgs_response = requests.get(f'https://api.github.com/users/{username}/orgs', headers=headers)
-          orgs_data = orgs_response.json()
-          print(json.dumps(orgs_data, indent=2))
-          EOF
-
-      - name: Output user profile details
-        run: |
-          echo "User profile details have been fetched and displayed in the job output."
+    - name: Commit and push if README changed
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add README.md
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest repository list" && git push)
