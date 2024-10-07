@@ -16,7 +16,7 @@ jobs:
 
       - name: Fetch GitHub repositories and update README
         run: |
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos?per_page=100 \
+          curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" https://api.github.com/user/repos?per_page=100 \
           | jq '.[] | "* [\(.name)](\(.html_url)) - \(.description // "No description provided." )"' > repos.md
           
           # Update README.md with the repo information
