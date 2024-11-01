@@ -28,3 +28,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ritaban06&show_icons=true&locale=en" alt="ritaban06" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ritaban06&" alt="ritaban06" /></p>
+
+[![An image of @ritaban06's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/ritaban06)](https://holopin.io/@ritaban06)
