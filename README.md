@@ -21,7 +21,8 @@
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
-![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
+<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a>
+
 
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ritaban06&show_icons=true&locale=en&layout=compact" alt="ritaban06" /></p>
