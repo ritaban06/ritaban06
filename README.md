@@ -28,6 +28,9 @@
   <a href="https://github.com/features/actions" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
   </a>
+  <a href="https://github.com/ethereumjs" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" alt="Ethereum"/>
+  </a>
 </p>
 
 
