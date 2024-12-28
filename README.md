@@ -22,7 +22,7 @@
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://github.com/dependabot" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white" alt="Dependabot"/> </a>
-
+<p align="left"> <a href="https://github.com/features/actions" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/> </a>
 
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ritaban06&show_icons=true&locale=en&layout=compact" alt="ritaban06" /></p>
