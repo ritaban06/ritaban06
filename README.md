@@ -5,9 +5,9 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ritaban06" alt="ritaban06" /></a> </p>
 
-- 🌱 I’m currently learning **React JS, Vite**
+- 🌱 I’m currently learning **Typescript**
 
-- 💬 Ask me about **C, PHP, Javascript, Java, React JS**
+- 💬 Ask me about **Vite, PHP, Javascript, Java, React JS**
 
 - 📫 How to reach me **ghoshritabancollege@gmail.com**
 
@@ -54,6 +54,9 @@
   </a>
   <a href="https://threejs.org/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Threejs"/>
+  </a>
+  <a href="https://www.typescriptlang.org/docs/" target="_blank" rel="noreferrer">
+    <img src="https://shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" alt="Typescript"/>
   </a>
   <a href="https://vite.dev/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
