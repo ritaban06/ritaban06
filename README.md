@@ -15,6 +15,7 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
+  <a href="https://wa.me/919477772867" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Social/whatsapp.svg" alt="Ritaban Ghosh" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/ritaban-ghosh-739428315" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ritaban-ghosh-739428315" height="30" width="40" /></a>
 <a href="https://kaggle.com/ritabanghosh06" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="ritabanghosh06" height="30" width="40" /></a>
 <a href="https://instagram.com/ritaban06" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ritaban06" height="30" width="40" /></a>
