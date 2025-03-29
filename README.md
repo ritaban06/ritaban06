@@ -138,3 +138,9 @@
 <h3 align="left">Hacktoberfest 2024:</h3>  
 
 [![An image of @ritaban06's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/ritaban06)](https://holopin.io/@ritaban06)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ritaban06/ritaban06/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ritaban06/ritaban06/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/ritaban06/ritaban06/output/github-snake.svg" />
+</picture>
