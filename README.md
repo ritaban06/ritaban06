@@ -7,7 +7,7 @@
 
 - 🌱 I’m currently learning **Typescript**
 
-- 💬 Ask me about **Vite, PHP, Javascript, Java, React JS**
+- 💬 Ask me about **Vite, Javascript, Java, React JS**
 
 - 📫 How to reach me **ghoshritabancollege@gmail.com**
 
