@@ -9,7 +9,7 @@
 
 - 💬 Ask me about **Vite, Javascript, Java, React JS**
 
-- 📫 How to reach me **ghoshritabancollege@gmail.com**
+- 📫 How to reach me **ghoshritaban2006+github@gmail.com**
 
 - ⚡ Fun fact **I think I am cool headed**
 
