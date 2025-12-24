@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ritaban Ghosh</h1>
-<h3 align="center">A passionate frontend developer</h3>
+<h3 align="center">A passionate full stack developer</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ritaban06&label=Profile%20views&color=0e75b6&style=flat" alt="ritaban06" /> </p>
 
@@ -135,7 +135,7 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ritaban06&" alt="ritaban06" /></p>
 
-<h3 align="left">Hacktoberfest 2024:</h3>  
+<h3 align="left">Hacktoberfest :</h3>  
 
 [![An image of @ritaban06's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/ritaban06)](https://holopin.io/@ritaban06)
 
