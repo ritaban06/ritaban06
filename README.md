@@ -29,18 +29,18 @@
   <a href="https://github.com/features/actions" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
   </a>
-  <a href="https://github.com/ethereumjs" target="_blank" rel="noreferrer">
+  <!-- <a href="https://github.com/ethereumjs" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" alt="Ethereum"/>
-  </a>
+  </a> -->
   <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34" alt="Firebase"/>
   </a>
   <a href="https://www.canva.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
   </a>
-  <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">
+  <!-- <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
-  </a>
+  </a> -->
   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM"/>
   </a>
@@ -95,15 +95,15 @@
   <a href="https://simple.wikipedia.org/wiki/JavaScript" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"/>
   </a>
-  <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer">
+  <!-- <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
-  </a>
+  </a> -->
   <a href="https://www.markdownguide.org/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"/>
   </a>
-  <a href="https://soliditylang.org/" target="_blank" rel="noreferrer">
+  <!-- <a href="https://soliditylang.org/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity"/>
-  </a>
+  </a> -->
   <a href="https://github.com/microsoft/terminal" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="Windows Terminal"/>
   </a>
@@ -116,9 +116,9 @@
   <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
   </a>
-  <a href="https://www.notion.com/" target="_blank" rel="noreferrer">
+  <!-- <a href="https://www.notion.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" alt="Notion"/>
-  </a>
+  </a> -->
   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
   </a>
