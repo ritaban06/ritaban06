@@ -133,7 +133,7 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats-selfhost.vercel.app/api?username=ritaban06&show_icons=true&locale=en" alt="ritaban06" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ritaban06&" alt="ritaban06" /></p>
+<p><img align="center" src="https://github-readme-streak-stats-sigma-mocha.vercel.app/?user=ritaban06&" alt="ritaban06" /></p>
 
 <h3 align="left">Hacktoberfest :</h3>  
 
